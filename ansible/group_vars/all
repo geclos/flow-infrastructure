@@ -1,0 +1,3 @@
+global_apt_cache_valid_time: 300
+global_apt_update_cache: yes
+

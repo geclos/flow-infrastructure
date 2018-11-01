@@ -1,0 +1,12 @@
+---
+- name: 'Web servers'
+  hosts: webservers
+  roles:
+    - common
+    - flow-backend
+
+- name: 'Database servers'
+  hosts: dbservers
+  roles:
+    - common
+    - mysql
