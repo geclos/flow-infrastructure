@@ -1,4 +1,0 @@
-deploy_directory: '/srv/app'
-public_path: "{{ deploy_directory }}/current/public"
-app_deploy_user: deploy
-port: 4000

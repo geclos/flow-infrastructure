@@ -1,0 +1,11 @@
+---
+- name: Install python-mysqldb
+  become: yes
+  apt:
+    name: "{{ item }}"
+    name: libmysqlclient-dev
+    state: present
+  vars:
+    item:
+    - python-mysqldb
+    - libmysqlclient-dev

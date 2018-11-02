@@ -31,3 +31,7 @@
 - name: Install .env
   become: true
   template: src=env.j2 dest={{deploy_directory}}/shared/.env force=yes mode=755 owner=deploy
+
+- name: Install database.yml
+  become: true
+  template: src=database.j2 dest={{deploy_directory}}/shared/config/database.yml force=yes mode=755 owner=deploy

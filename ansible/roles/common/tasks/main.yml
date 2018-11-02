@@ -1,13 +1,8 @@
 ---
-- name: Install common packages
-  apt: state=latest pkg={{ item }} update_cache={{ global_apt_update_cache }} cache_valid_time={{ global_apt_cache_valid_time }}
-  become: yes
-  with_items:
-  - build-essential
-  - htop
-  - vim
+- name: 'common'
+  include: common.yml
+  when: common_stuff_installed is not defined
 
-- authorized_key: user={{ sudo_user }} key=https://github.com/{{item}}.keys
-  with_items:
-    - geclos
-  become: true
+- name: 'deploy'
+  include: deploy.yml
+  when: deploy_user_created is not defined

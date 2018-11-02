@@ -1,0 +1,4 @@
+---
+- name: 'ruby'
+  include: ruby.yml
+  when: ruby_installed is not defined

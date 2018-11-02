@@ -1,0 +1,20 @@
+---
+- name: Install common packages
+  become: yes
+  apt:
+    name: "{{ item }}"
+    update_cache: "{{global_apt_update_cache}}"
+    cache_valid_time: "{{global_apt_cache_valid_time}}"
+  vars:
+    item:
+    - build-essential
+    - htop
+    - vim
+
+- authorized_key: user={{ sudo_user }} key=https://github.com/{{item}}.keys
+  with_items:
+    - geclos
+  become: true
+
+- set_fact:
+    common_stuff_installed: yes

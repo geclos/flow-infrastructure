@@ -1,0 +1,4 @@
+---
+- name: 'nodejs'
+  include: nodejs.yml
+  when: nodejs_installed is not defined

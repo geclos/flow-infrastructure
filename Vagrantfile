@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
-  config.vm.box = "ubuntu/trusty64"
+  config.vm.box = "ubuntu/xenial64"
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
@@ -40,9 +40,12 @@ Vagrant.configure("2") do |config|
     vb.memory = "2048"
   end
 
+  # ssh configuration
+  config.ssh.forward_agent = true
+
   # Configuration
   config.vm.define :dev do |dev|
-    dev.vm.provision :shell, path: File.join(File.dirname(__FILE__), 'scripts/provision.sh') 
-    dev.vm.provision :shell, inline: 'cd \/vagrant/ansible/ && ansible-playbook -i environments/development site.yml'
+    dev.vm.provision :shell, path: File.join(File.dirname(__FILE__), 'scripts/provision.sh')
+    dev.vm.provision :shell, inline: 'cd \/vagrant/ansible/ && ansible-playbook -v -i environments/development site.yml'
   end
 end

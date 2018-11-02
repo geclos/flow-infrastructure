@@ -1,0 +1,14 @@
+---
+- name: Add source package
+  become: true
+  shell: curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+
+- name: Install nodejs
+  apt:
+    name: nodejs
+    state: present
+    update_cache: "{{global_apt_update_cache}}"
+    cache_valid_time: "{{global_apt_cache_valid_time}}"
+
+- set_fact:
+    nodejs_installed: yes
