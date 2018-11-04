@@ -1,1 +1,10 @@
+stage: production
+sudo_user: ubuntu
+db_host: localhost
+db_login_user: "root"
+db_login_password: ""
+rds_database: flow_production
+rds_username: flow_production
+rds_password: ''
+capistrano_default_branch: master
 capistrano_default_branch: master
