@@ -1,5 +1,6 @@
 stage: development
 sudo_user: vagrant
+deploy_user: vagrant
 db_host: localhost
 db_login_user: "root"
 db_login_password: ""

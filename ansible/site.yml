@@ -1,1 +1,1 @@
-- include: "servers.yml"
+- import_playbook: "servers.yml"

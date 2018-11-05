@@ -1,5 +1,6 @@
 stage: production
 sudo_user: ubuntu
+deploy_user: deploy
 db_host: localhost
 db_login_user: "root"
 db_login_password: ""

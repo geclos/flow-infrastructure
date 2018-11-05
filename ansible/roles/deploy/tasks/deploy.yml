@@ -1,0 +1,12 @@
+---
+- name: Create deployment user
+  become: true
+  user: name={{deploy_user}} comment="Application deployment user" shell="/bin/bash"
+
+- authorized_key: user={{deploy_user}} key=https://github.com/{{item}}.keys
+  with_items:
+    - geclos
+  become: true
+
+- set_fact:
+    deploy_user_created: yes

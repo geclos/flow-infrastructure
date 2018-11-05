@@ -1,0 +1,4 @@
+---
+- name: 'deploy'
+  include: deploy.yml
+  when: deploy_user_created is not defined

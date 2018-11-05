@@ -1,7 +1,5 @@
-deploy_directory: '/srv/app'
+deploy_directory: '/srv/backend'
 public_path: "{{ deploy_directory }}/current/public"
-app_deploy_user: deploy
-port: 4000
 app_location: "localhost:3000"
 app_domain: "localhost"
 mailgun_password: ""

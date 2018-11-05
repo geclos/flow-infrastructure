@@ -1,9 +1,8 @@
-# Directory structure
 - name: Create deployment directory
   become: true
-  file: path={{deploy_directory}} owner=deploy group=deploy state=directory
+  file: path={{deploy_directory}} owner={{deploy_user}} group={{deploy_user}} state=directory
 - name: Make shared directories
-  file: path={{deploy_directory}}/shared/{{item}} group=deploy owner=deploy state=directory
+  file: path={{deploy_directory}}/shared/{{item}} group={{deploy_user}} owner={{deploy_user}} state=directory
   become: true
   with_items:
     - tmp
@@ -30,8 +29,8 @@
 
 - name: Install .env
   become: true
-  template: src=env.j2 dest={{deploy_directory}}/shared/.env force=yes mode=755 owner=deploy
+  template: src=env.j2 dest={{deploy_directory}}/shared/.env force=yes mode=755 owner={{deploy_user}}
 
 - name: Install database.yml
   become: true
-  template: src=database.j2 dest={{deploy_directory}}/shared/config/database.yml force=yes mode=755 owner=deploy
+  template: src=database.j2 dest={{deploy_directory}}/shared/config/database.yml force=yes mode=755 owner={{deploy_user}}
