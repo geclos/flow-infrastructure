@@ -1,14 +1,7 @@
-default: &default
+{{stage}}:
   adapter: mysql2
+  host: {{ db_host }}
+  database: {{ rds_database }}
+  username: {{ rds_username }}
+  password: {{ rds_password }}
   encoding: utf8mb4
-
-development:
-  <<: *default
-  database: {{ rds_database }}
-
-test:
-  <<: *default
-  database: {{ rds_database }}
-
-production:
-  database: {{ rds_database }}

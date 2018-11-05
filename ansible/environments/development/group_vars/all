@@ -2,9 +2,9 @@ stage: development
 sudo_user: vagrant
 deploy_user: vagrant
 db_host: localhost
-db_login_user: "root"
-db_login_password: ""
+db_login_user: root
+db_login_password:
 rds_database: flow_development
 rds_username: flow_development
-rds_password: ''
+rds_password: papapa33
 capistrano_default_branch: master

@@ -25,6 +25,7 @@
     name: "{{ rds_username }}"
     host: "%"
     password: "{{ rds_password }}"
+    priv:  "{{ rds_database }}.*:ALL"
   become: true
 
 - name: Install .env
