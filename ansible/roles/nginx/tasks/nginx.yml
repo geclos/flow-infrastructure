@@ -1,0 +1,17 @@
+---
+- name: "Install nginx package"
+  apt: pkg=nginx state=latest update_cache={{ global_apt_update_cache }} cache_valid_time={{ global_apt_cache_valid_time }}
+  become: yes
+
+- name: "Ensure nginx sites are managed by ansible"
+  file:
+    path: /etc/nginx/sites-enabled/default
+    state: absent
+  become: yes
+
+- name: "Start nginx on boot"
+  service: name=nginx enabled=true
+  become: yes
+
+- set_fact:
+    nginx_installed: yes

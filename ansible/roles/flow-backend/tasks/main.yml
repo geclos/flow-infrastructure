@@ -35,3 +35,19 @@
 - name: Install database.yml
   become: true
   template: src=database.j2 dest={{deploy_directory}}/shared/config/database.yml force=yes mode=755 owner={{deploy_user}}
+
+- name: delete the site
+  file: path="/etc/nginx/sites-enabled/{{ app_name }}"
+    state='absent'
+  when: (state == 'absent')
+  become: true
+
+- name: "configure nginx site {{ app_name }}"
+  template: src=site.j2
+    dest="/etc/nginx/sites-enabled/{{ app_name }}"
+    owner=root
+    group=root
+    mode=0644
+  become: yes
+  notify: nginx
+  when: (state != 'absent')

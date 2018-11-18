@@ -4,4 +4,4 @@ dependencies:
   - { role: ruby }
   - { role: nodejs }
   - { role: python-mysqldb }
-  - { role: mysql }
+  - { role: nginx }

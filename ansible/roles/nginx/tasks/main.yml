@@ -1,0 +1,4 @@
+---
+- name: nginx
+  include: nginx.yml
+  when: nginx_installed is not defined
