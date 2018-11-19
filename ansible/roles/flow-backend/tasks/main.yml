@@ -12,21 +12,21 @@
     - bin
     - config
 
-- name: Create the database
-  mysql_db:
-    name: "{{ rds_database }}"
-    state: present
+# TODO: uncomment if need be.
+# - name: Create the database
+#   mysql_db:
+#     name: "{{ rds_database }}"
+#     state: present
 
-- name: Create the database user
-  mysql_user:
-    login_host: "{{ db_host }}"
-    login_user: "{{ db_login_user }}"
-    login_password: "{{ db_login_password }}"
-    name: "{{ rds_username }}"
-    host: "%"
-    password: "{{ rds_password }}"
-    priv:  "{{ rds_database }}.*:ALL"
-  become: true
+# - name: Create the database user
+#   mysql_user:
+#     login_host: "{{ db_host }}"
+#     login_user: "{{ db_login_user }}"
+#     login_password: "{{ db_login_password }}"
+#     name: "{{ rds_username }}"
+#     password: "{{ rds_password }}"
+#     priv:  "{{ rds_database }}.*:ALL"
+#   become: true
 
 - name: Install .env
   become: true
@@ -49,5 +49,4 @@
     group=root
     mode=0644
   become: yes
-  notify: nginx
   when: (state != 'absent')
