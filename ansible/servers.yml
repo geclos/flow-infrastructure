@@ -1,4 +1,13 @@
 ---
+- name: 'Development'
+  hosts: development
+  roles:
+    - common
+    - deploy
+    - ruby
+    - nodejs
+    - python-mysqldb
+
 - name: 'Web servers'
   hosts: webservers
   roles:
