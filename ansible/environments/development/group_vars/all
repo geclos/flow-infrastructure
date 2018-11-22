@@ -7,4 +7,6 @@ db_login_password:
 rds_database: flow_development
 rds_username: flow_development
 rds_password: papapa33
-capistrano_default_branch: master
+secret_key_base: afcf877b861fc085bcbee6089161d3337708c67e24dda6c78e99d9f555fc1d316708518d1d733ca3b8a86edd5d3266d13ef2357ac1efdf4d14ed87da117431ee
+app_domain: localhost
+app_location: 'localhost:3000'
