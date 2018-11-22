@@ -1,6 +1,4 @@
 app_name: 'flow_backend'
 deploy_directory: '/srv/backend'
-mailgun_api_key: ""
-mailgun_password: ""
 public_path: "{{ deploy_directory }}/current/public"
 state: file

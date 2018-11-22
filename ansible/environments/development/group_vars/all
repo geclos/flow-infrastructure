@@ -1,12 +1,14 @@
-stage: development
-sudo_user: vagrant
-deploy_user: vagrant
-db_host: localhost
-db_login_user: root
-db_login_password:
-rds_database: flow_development
-rds_username: flow_development
-rds_password: papapa33
-secret_key_base: afcf877b861fc085bcbee6089161d3337708c67e24dda6c78e99d9f555fc1d316708518d1d733ca3b8a86edd5d3266d13ef2357ac1efdf4d14ed87da117431ee
 app_domain: localhost
 app_location: 'localhost:3000'
+db_host: localhost
+db_login_password:
+db_login_user: root
+deploy_user: vagrant
+mailgun_api_key:
+mailgun_password:
+rds_database: flow_development
+rds_password: papapa33
+rds_username: flow_development
+secret_key_base: afcf877b861fc085bcbee6089161d3337708c67e24dda6c78e99d9f555fc1d316708518d1d733ca3b8a86edd5d3266d13ef2357ac1efdf4d14ed87da117431ee
+stage: development
+sudo_user: vagrant
