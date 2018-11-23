@@ -47,5 +47,10 @@ Vagrant.configure("2") do |config|
   config.vm.define :dev do |dev|
     dev.vm.provision :shell, path: File.join(File.dirname(__FILE__), 'scripts/provision.sh')
     dev.vm.provision :shell, inline: 'cd \/vagrant/ansible/ && ansible-playbook -v -i environments/development site.yml'
+    dev.vm.network :private_network, ip: '10.0.4.5'
+    dev.vm.provider 'virtualbox' do |v|
+      v.memory = 3000
+      v.cpus = 2
+    end
   end
 end
