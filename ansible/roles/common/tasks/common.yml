@@ -16,5 +16,10 @@
     - geclos
   become: true
 
+- authorized_key: user={{ sudo_user }} key=https://gitlab.com/{{item}}.keys
+  with_items:
+    - geclos
+  become: true
+
 - set_fact:
     common_stuff_installed: yes
