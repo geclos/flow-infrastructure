@@ -2,3 +2,4 @@
 *.log
 flow-frontend
 flow-backend
+*.retry

@@ -3,6 +3,10 @@
   become: true
   file: path={{deploy_directory}} owner={{deploy_user}} group={{deploy_user}} state=directory
 
+- name: Create shared directory
+  become: true
+  file: path={{deploy_directory}}/shared owner={{deploy_user}} group={{deploy_user}} state=directory
+
 - name: Install .env
   become: true
   template: src=env.j2 dest={{deploy_directory}}/shared/.env force=yes mode=755 owner={{deploy_user}}
