@@ -1,5 +1,5 @@
 app_domain: localhost
-app_location: 'localhost:3000'
+app_location: 'http://localhost:3000'
 db_host: localhost
 db_login_password:
 db_login_user: root
