@@ -1,2 +1,4 @@
 .vagrant
 *.log
+flow-frontend
+flow-backend
