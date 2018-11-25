@@ -1,5 +1,6 @@
 app_domain: localhost
 app_location: 'http://localhost:3000'
+api_endpoint: 'http://localhost:4000'
 db_host: localhost
 db_login_password:
 db_login_user: root

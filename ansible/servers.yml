@@ -13,7 +13,8 @@
   hosts: webservers
   roles:
     - common
-    - flow-backend
+    - flow_backend
+    - flow_frontend
 
 - name: 'Database servers'
   hosts: dbservers

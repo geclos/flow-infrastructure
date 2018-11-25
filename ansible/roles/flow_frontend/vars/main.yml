@@ -1,0 +1,4 @@
+app_name: 'flow_frontned'
+deploy_directory: '/srv/frontend'
+public_path: "{{ deploy_directory }}/build"
+state: file

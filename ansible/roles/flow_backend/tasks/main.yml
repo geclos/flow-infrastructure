@@ -1,0 +1,37 @@
+---
+- name: Create deployment directory
+  become: true
+  file: path={{deploy_directory}} owner={{deploy_user}} group={{deploy_user}} state=directory
+- name: Make shared directories
+  file: path={{deploy_directory}}/shared/{{item}} group={{deploy_user}} owner={{deploy_user}} state=directory
+  become: true
+  with_items:
+    - tmp
+    - log
+    - public
+    - bundle
+    - bin
+    - config
+
+- name: Install .env
+  become: true
+  template: src=env.j2 dest={{deploy_directory}}/shared/.env force=yes mode=755 owner={{deploy_user}}
+
+- name: Install database.yml
+  become: true
+  template: src=database.j2 dest={{deploy_directory}}/shared/config/database.yml force=yes mode=755 owner={{deploy_user}}
+
+- name: delete the site
+  file: path="/etc/nginx/sites-enabled/{{ app_name }}"
+    state='absent'
+  when: (state == 'absent')
+  become: true
+
+- name: "configure nginx site {{ app_name }}"
+  template: src=site.j2
+    dest="/etc/nginx/sites-enabled/{{ app_name }}"
+    owner=root
+    group=root
+    mode=0644
+  become: yes
+  when: (state != 'absent')

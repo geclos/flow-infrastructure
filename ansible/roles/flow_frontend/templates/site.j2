@@ -1,0 +1,12 @@
+server {
+    listen 3000;
+    server_name {{ app_name }};
+
+    root {{ deploy_directory }}/current/build;
+
+    try_files $uri/index.html $uri @app;
+
+    location / {
+      try_files $uri $uri/ /index.html;
+    }
+}
