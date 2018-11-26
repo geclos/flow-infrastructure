@@ -1,6 +1,6 @@
 server {
-    listen 3000;
-    server_name {{ app_name }};
+    listen 80;
+    server_name app.{{ app_domain }};
 
     root {{ deploy_directory }}/current/build;
 

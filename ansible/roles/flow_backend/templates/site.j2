@@ -4,8 +4,8 @@ upstream app {
 }
 
 server {
-    listen 4000;
-    server_name {{ app_name }};
+    listen 80;
+    server_name {{ app_domain }} www.{{ app_domain }};
 
     root {{ deploy_directory }}/current/public;
 
