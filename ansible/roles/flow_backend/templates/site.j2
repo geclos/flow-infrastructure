@@ -6,6 +6,16 @@ upstream app {
 server {
     listen 80;
     server_name {{ app_domain }} www.{{ app_domain }};
+    return 301 https://{{ app_domain }}; 
+}
+
+server {
+    listen 443 ssl;
+
+    server_name {{ app_domain }} www.{{ app_domain }};
+
+    ssl_certificate /etc/letsencrypt/live/{{ app_domain }}/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/{{ app_domain }}/privkey.pem;
 
     root {{ deploy_directory }}/current/public;
 
