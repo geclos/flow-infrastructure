@@ -1,9 +1,7 @@
 server {
     listen 80;
-
     server_name app.{{ app_domain }};
-
-    return 301 https://app.{{ app_domain }}; 
+    return 301 https://app.{{ app_domain }}$request_uri;
 }
 
 

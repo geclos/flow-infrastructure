@@ -6,7 +6,7 @@ upstream app {
 server {
     listen 80;
     server_name {{ app_domain }} www.{{ app_domain }};
-    return 301 https://{{ app_domain }}; 
+    return 301 https://{{ app_domain }}$request_uri;
 }
 
 server {
