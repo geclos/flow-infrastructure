@@ -2,4 +2,4 @@ app_name: 'flow_backend'
 deploy_directory: '/srv/backend'
 public_path: "{{ deploy_directory }}/current/public"
 state: file
-typeform_link: 'https://iflowframework.typeform.com/to/HFHvwO'
+typeform_link: 'https://iflowframework.typeform.com/to/V1CSxY'
