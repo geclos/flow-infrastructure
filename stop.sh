@@ -1,3 +1,3 @@
-sudo umount ~/Documents/personal/flow-frontend
-sudo umount ~/Documents/personal/flow-backend
+sudo umount -f ~/Documents/personal/flow-frontend
+sudo umount -f ~/Documents/personal/flow-backend
 vagrant halt
