@@ -1,0 +1,6 @@
+---
+dependencies:
+  - { role: deploy }
+  - { role: nginx }
+  - { role: nodejs }
+  - { role: python-mysqldb }

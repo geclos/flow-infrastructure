@@ -1,0 +1,13 @@
+server {
+    listen 80;
+
+    server_name {{ app_domain }};
+
+    root {{ repo_directory }}/build;
+
+    try_files $uri/index.html $uri @app;
+
+    location / {
+      try_files $uri $uri/ /index.html;
+    }
+}

@@ -3,11 +3,8 @@
   hosts: development
   roles:
     - common
-    - deploy
-    - rvm.ruby
-    - nodejs
-    - python-mysqldb
-    - database
+    - flow_backend_repo
+    - flow_frontend_repo
 
 - name: 'Web servers'
   hosts: webservers

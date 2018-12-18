@@ -1,0 +1,6 @@
+repo_name: flow-backend
+app_name: flow_backend
+repo_directory: "/home/{{ deploy_user }}/{{ repo_name }}"
+repo: "git@gitlab.com:geclos/{{ repo_name }}.git"
+public_path: "{{ repo_directory }}/public"
+state: file
